@@ -2705,7 +2705,7 @@
 				"Zimbabwe",
 				"Zimbabwe"
 			],
-			"autocolorscale": false
+			"autocolorscale": true
 		}
 	],
 	"layout": {
@@ -2751,7 +2751,7 @@
 			"range": [ -1, 4 ],
 			"autorange": true
 		},
-		"height": 663,
+		"height": 1663,
 		"margin": {
 			"b": 0,
 			"l": 0,
