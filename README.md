@@ -1,68 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proposal
 
-## Available Scripts
+- What problem does your app solve?
 
-In the project directory, you can run:
+The Deforestation Dashboard is an awareness platform where users gain insights into how the world’s forests are changing.
+	
+- Be as specific as possible; how does your app solve the problem?
 
-### `npm start`
+By presenting accurate, historical data, The Deforestation Dashboard allows users to view the decline or increase in forest cover throughout the world. By presenting the data in a historical and geographical context we aim to raise personalized awareness about the planet’s deforestation.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- What is the mission statement?
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+“To educate and inspire through accurate and current information .”
+Features
 
-### `npm test`
+- What features are required for your minimum viable product?
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Choropleth maps that show forest cover by country over time
+2. An interactive component that allows users to select a country and get more detailed information
+3. Create a model that predicts future forest cover based upon historical data"
+	
+- What features may you wish to put in a future release?
 
-### `npm run build`
+1. Create a ""tutorial"" about forest loss and its effects on geosystems
+2. Include governmental changes by country in the time series data and look for connections
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- What do the top 3 similar apps do for their users?
+Frameworks - Libraries
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- What 3rd party frameworks/libraries are you considering using?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ReactJS, Redux, Redux-Thunk, Axios, React-Router, Styled-Components, Plotly, LESS and/or SASS
 
-### `npm run eject`
+- Do APIs require you to contact its maintainer to gain access?  no
+- Are you required to pay to use the API?  no
+For Data Scientists
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Describe the Established data source with at least rough data able to be provided on day 1. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+https://github.com/manjulamishra/Deforestation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- You can gather information about the data set you’ll be working with from the project description. Be sure to collaborate with your PM, and your Backend Architect to chat about the resources you have.
 
-## Learn More
+We will create a backend server to import data from multiple resources, analyze all inputs, and create a model that predicts future forest cover based upon historical data.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Write a description for what the DS problem is (what uncertainty/prediction are we trying to do here? Sentiment analysis? Why is this a useful solution to a problem?)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+We are considering using time series analysis that predicts future values of forest cover based on previously observed values.
 
-### Code Splitting
+- A target (e.g. JSON format or such) for output that DS students can deliver to web/other students for them to ingest and use in the app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+The output will be in JSON format
 
-### Analyzing the Bundle Size
+Target Audience
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- Who is your target audience? Be specific.
 
-### Making a Progressive Web App
+	Anyone interested in how the forests of the world are changing with time!  As well as prospective employers that want to see some cool work done by Lambda students!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- What feedback have you gotten from potential users?
 
-### Advanced Configuration
+	Having an intuitive interface to view and navigate well representative graphs/plots built off solid data will make this app stand out.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Have you validated the problem and your solution with your target audience? How?
 
-### Deployment
+Research
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Research thoroughly before writing a single line of code. Solidify the features of your app conceptually before implementation. Spend the weekend researching so you can hit the ground running on Monday.
+Prototype Key Feature(s)
 
-### `npm run build` fails to minify
+- This is the “bread and butter” of the app, this is what makes your app yours. Calculate how long it takes to implement these features and triple the time estimated. That way you’ll have plenty of time to finish. It is preferred to drop features and spend more time working on your MVP features if needed.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
