@@ -1,16 +1,24 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
+import { Route, Link } from 'react-router-dom';
 
-import { data } from '../Plot 69.json';
+import { data } from '../../Plot 69.json';
 
-const Map = (props) => {
+import Map1990 from './Map1990';
+import Map2015 from './Map2015';
+
+const Maps = (props) => {
 	// console.log('from map', data[0].locations);
-
-	const locationsArray = props.rawData.map((item) => item.entity);
-	const zArray = props.rawData.map((item) => item.percent);
+	// const filteredByYear = props.rawData.filter((item) => item.year === 2015);
+	// const locationsArray = filteredByYear.map((item) => item.entity);
+	// const zArray = filteredByYear.map((item) => item.percent);
 	return (
 		<div>
-			<Plot
+			<Link to="/1990">1990</Link>
+			<Link to="/2015">2015</Link>
+			<Route path="/1990" render={() => <Map1990 rawData={props.rawData} />} />
+			<Route path="/2015" render={() => <Map2015 rawData={props.rawData} />} />
+			{/* <Plot
 				// data={data}
 				data={[
 					{
@@ -38,9 +46,9 @@ const Map = (props) => {
 						}
 					}
 				}}
-			/>
+			/> */}
 		</div>
 	);
 };
 
-export default Map;
+export default Maps;
