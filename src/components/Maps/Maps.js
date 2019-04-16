@@ -5,6 +5,7 @@ import { Route, Link } from 'react-router-dom';
 import { data } from '../../Plot 69.json';
 
 import Map1990 from './Map1990';
+import Map2000 from './Map2000';
 import Map2015 from './Map2015';
 
 const Maps = (props) => {
@@ -15,8 +16,10 @@ const Maps = (props) => {
 	return (
 		<div>
 			<Link to="/1990">1990</Link>
+			<Link to="/2000">2000</Link>
 			<Link to="/2015">2015</Link>
 			<Route path="/1990" render={() => <Map1990 rawData={props.rawData} />} />
+			<Route path="/2000" render={() => <Map2000 rawData={props.rawData} />} />
 			<Route path="/2015" render={() => <Map2015 rawData={props.rawData} />} />
 			{/* <Plot
 				// data={data}

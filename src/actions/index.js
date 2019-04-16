@@ -29,3 +29,34 @@ export const getData = () => {
 			});
 	};
 };
+
+export const GET_YEAR_START = 'GET_YEAR_START';
+export const GET_YEAR_SUCCESS = 'GET_YEAR_SUCCESS';
+export const GET_YEAR_FAILURE = 'GET_YEAR_FAILURE';
+
+export const getYEAR = () => {
+	console.log('getYEAR called');
+	return (dispatch) => {
+		dispatch({
+			type : GET_YEAR_START
+		});
+		console.log('abaove axios');
+		axios
+			// .get('https://deforestation-dashboard.herokuapp.com/api')
+			.get(`https://deforestation-dashboard.herokuapp.com/forest/1990/array`)
+			.then((res) => {
+				console.log('here is the YEAR', res);
+				dispatch({
+					type    : GET_YEAR_SUCCESS,
+					payload : res.data
+				});
+			})
+			.catch((err) => {
+				console.log('error YEAR', err);
+				dispatch({
+					type    : GET_YEAR_FAILURE,
+					payload : err
+				});
+			});
+	};
+};
