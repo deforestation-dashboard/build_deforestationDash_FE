@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
 
-import Map from './components/Map';
+import Maps from './components/Maps/Maps';
 import Dash from './components/Dash';
 import { getData } from './actions';
 
@@ -18,11 +19,13 @@ class App extends Component {
 		}
 
 		return (
-			<div className="App">
-				<h1>{this.props.data.message}</h1>
-				<Map rawData={this.props.data} />
-				<Dash />
-			</div>
+			<Router>
+				<div className="App">
+					<h1>{this.props.data.message}</h1>
+					<Maps rawData={this.props.data} />
+					<Dash />
+				</div>
+			</Router>
 		);
 	}
 }
