@@ -13,10 +13,10 @@ class App extends Component {
 		this.props.getData();
 	}
 
-	selectYear = (e, year) => {
-		// e.preventDefault();
-		getYEAR(year);
-	};
+	// selectYear = (e, year) => {
+	// 	e.preventDefault();
+	// 	this.props.getYEAR(year);
+	// };
 
 	render() {
 		if (this.props.loading) {
@@ -26,14 +26,14 @@ class App extends Component {
 		return (
 			<Router>
 				<div className="App">
-					<button onClick={(e) => this.selectYear(e, 1990)}>1990</button>
+					{/* <button onClick={(e) => this.selectYear(e, 1990)}>1990</button>
 					<button onClick={(e) => this.selectYear(e, 2000)}>2000</button>
 					<button onClick={(e) => this.selectYear(e, 2005)}>2005</button>
 					<button onClick={(e) => this.selectYear(e, 2010)}>2010</button>
-					<button onClick={(e) => this.selectYear(e, 2015)}>2015</button>
+					<button onClick={(e) => this.selectYear(e, 2015)}>2015</button> */}
 					<h1>{this.props.data.message}</h1>
 					<Maps rawData={this.props.data} />
-					<Dash />
+					<Dash rawData={this.props.data} />
 				</div>
 			</Router>
 		);

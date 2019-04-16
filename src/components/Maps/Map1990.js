@@ -16,16 +16,19 @@ const Map1990 = (props) => {
 						locations      : locationsArray,
 						z              : zArray,
 						autocolorscale : false,
-						colorscale     : [ [ 0, '#f9f7b1' ], [ 1, '#186806' ] ]
+						colorscale     : [ [ 0, '#f9f7b1' ], [ 1, '#186806' ] ],
+						zmin           : 0,
+						zmax           : 100
 					}
 				]}
 				layout={{
-					width  : 1300,
-					height : 800,
+					width         : 1300,
+					height        : 800,
 
-					title  : 'Tree Coverage - 1990',
+					paper_bgcolor : '#ffffff',
+					title         : 'Tree Coverage - 1990',
 
-					geo    : {
+					geo           : {
 						landcolor  : 'rgb(200, 212, 227)',
 						showlakes  : true,
 						showocean  : true,

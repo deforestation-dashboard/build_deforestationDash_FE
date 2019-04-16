@@ -34,16 +34,15 @@ export const GET_YEAR_START = 'GET_YEAR_START';
 export const GET_YEAR_SUCCESS = 'GET_YEAR_SUCCESS';
 export const GET_YEAR_FAILURE = 'GET_YEAR_FAILURE';
 
-export const getYEAR = () => {
-	console.log('getYEAR called');
+export const getYEAR = (year) => {
+	console.log('getYEAR called', year);
 	return (dispatch) => {
 		dispatch({
 			type : GET_YEAR_START
 		});
-		console.log('abaove axios');
 		axios
 			// .get('https://deforestation-dashboard.herokuapp.com/api')
-			.get(`https://deforestation-dashboard.herokuapp.com/forest/1990/array`)
+			.get(`https://deforestation-dashboard.herokuapp.com/forest/${year}/array`)
 			.then((res) => {
 				console.log('here is the YEAR', res);
 				dispatch({

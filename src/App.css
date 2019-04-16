@@ -1,4 +1,35 @@
 .App {
+	display: flex;
 	text-align: center;
-	background: black;
+	background: rgb(35, 54, 65);
+}
+
+.map-wrapper {
+	max-width: 650px;
+	/* border: 1px solid red; */
+	overflow: hidden;
+}
+
+.dash-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.year-links {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	justify-content: space-evenly;
+	align-items: flex-start;
+}
+
+.year {
+	text-decoration: none;
+	color: gray;
+	font-size: 24px;
+}
+
+.active {
+	color: white;
+	text-decoration: underline;
 }

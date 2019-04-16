@@ -25,17 +25,17 @@ const Map2015 = (props) => {
 						locations      : locationsArray,
 						z              : zArray,
 						autocolorscale : false,
-						colorscale     : [ [ 0, '#f9f7b1' ], [ 1, '#186806' ] ]
+						colorscale     : [ [ 0, '#f9f7b1' ], [ 1, '#186806' ] ],
+						zmin           : 0,
+						zmax           : 100
 					}
 				]}
 				layout={{
-					width         : 1300,
-					height        : 800,
+					width         : 650,
+					height        : 500,
 					clickmode     : 'event+select',
 
-					paper_bgcolor : '#131326',
-
-					title         : 'Tree Coverage - 2015',
+					paper_bgcolor : '#ffffff',
 
 					geo           : {
 						landcolor  : 'rgb(200, 212, 227)',
@@ -43,12 +43,11 @@ const Map2015 = (props) => {
 						showocean  : true,
 						framecolor : 'rgb(200, 212, 227)',
 						framewidth : 0.5,
-						oceancolor : 'rgb(15, 9, 132)',
-						// locationssrc : 'Algeria',
+						oceancolor : 'rgb(242, 249, 239)',
 
 						projection : {
-							type  : 'robinson',
-							scale : 3
+							type  : 'mercator',
+							scale : 2
 						}
 					}
 				}}

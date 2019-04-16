@@ -1,29 +1,23 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-import { getYEAR } from '../../actions';
-
-const Map2000 = (props) => {
-	const filteredByYear = props.rawData.filter((item) => item.year === 2000);
+const Map2005 = (props) => {
+	// console.log('from map', data[0].locations);
+	const filteredByYear = props.rawData.filter((item) => item.year === 2005);
 	const locationsArray = filteredByYear.map((item) => item.entity);
 	const zArray = filteredByYear.map((item) => item.percent);
 
-	// let selectedYear = 1990;
-	// const selectYear = (e, year) => {
-	// 	e.preventDefault();
-	// 	selectedYear = year;
-	// 	filteredByYear = props.rawData.filter((item) => item.year === selectedYear);
-	// 	console.log(selectedYear);
-	// };
+	const clicked = (e) => {
+		console.log(e.points[0].location, e.points[0]);
+	};
 
 	return (
 		<div>
-			{/* <button onClick={(e) => selectYear(e, 1990)}>1990</button>
-			<button onClick={(e) => selectYear(e, 2000)}>2000</button>
-			<button onClick={(e) => selectYear(e, 2005)}>2005</button>
-			<button onClick={(e) => selectYear(e, 2010)}>2010</button>
-			<button onClick={(e) => selectYear(e, 2015)}>2015</button> */}
 			<Plot
+				onClick={(e) => {
+					console.log('onClick');
+					clicked(e);
+				}}
 				data={[
 					{
 						type           : 'choropleth',
@@ -43,7 +37,7 @@ const Map2000 = (props) => {
 
 					paper_bgcolor : '#ffffff',
 
-					title         : `Tree Coverage - 2000`,
+					title         : 'Tree Coverage - 2005',
 
 					geo           : {
 						landcolor  : 'rgb(200, 212, 227)',
@@ -64,4 +58,4 @@ const Map2000 = (props) => {
 	);
 };
 
-export default Map2000;
+export default Map2005;
