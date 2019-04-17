@@ -31,8 +31,8 @@ const Map2015 = (props) => {
 					}
 				]}
 				layout={{
-					width         : 650,
-					height        : 500,
+					width         : 1100,
+					height        : 800,
 					clickmode     : 'event+select',
 
 					paper_bgcolor : '#ffffff',
@@ -46,8 +46,8 @@ const Map2015 = (props) => {
 						oceancolor : 'rgb(242, 249, 239)',
 
 						projection : {
-							type  : 'mercator',
-							scale : 2
+							type  : 'robinson',
+							scale : 1.5
 						}
 					}
 				}}

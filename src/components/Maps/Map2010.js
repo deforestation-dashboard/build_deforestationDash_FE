@@ -31,13 +31,11 @@ const Map2010 = (props) => {
 					}
 				]}
 				layout={{
-					width         : 1300,
+					width         : 1100,
 					height        : 800,
 					clickmode     : 'event+select',
 
 					paper_bgcolor : '#ffffff',
-
-					title         : 'Tree Coverage - 2010',
 
 					geo           : {
 						landcolor  : 'rgb(200, 212, 227)',
@@ -45,11 +43,11 @@ const Map2010 = (props) => {
 						showocean  : true,
 						framecolor : 'rgb(200, 212, 227)',
 						framewidth : 0.5,
-						oceancolor : 'rgb(15, 9, 132)',
+						oceancolor : 'rgb(242, 249, 239)',
 
 						projection : {
 							type  : 'robinson',
-							scale : 1
+							scale : 1.5
 						}
 					}
 				}}

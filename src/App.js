@@ -37,13 +37,15 @@ class App extends Component {
 					<button onClick={(e) => this.selectYear(e, 2005)}>2005</button>
 					<button onClick={(e) => this.selectYear(e, 2010)}>2010</button>
 					<button onClick={(e) => this.selectYear(e, 2015)}>2015</button> */}
-					<h1>{this.props.data.message}</h1>
-					<NavLink className="link" to="/world">
-						Full Page Map
-					</NavLink>
-					<NavLink className="link" to="/dash">
-						Dashboard
-					</NavLink>
+					<h1>Deforestation Dash</h1>
+					<nav className="nav">
+						<NavLink className="link" to="/world/2015">
+							Full Page Map
+						</NavLink>
+						<NavLink className="link" to="/dash">
+							Dashboard
+						</NavLink>
+					</nav>
 
 					<Route path="/world" render={() => <Maps rawData={this.props.data} />} />
 					<Route

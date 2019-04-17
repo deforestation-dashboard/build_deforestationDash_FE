@@ -52,7 +52,15 @@ const CountryMap = (props) => {
 
 					paper_bgcolor : '#ffffff',
 
-					title         : `Tree Coverage - 2000`,
+					margin        : {
+						pad        : 0,
+						autoexpand : true
+					},
+
+					title         : {
+						text : `Tree Coverage - 2000`,
+						pad  : { t: 0, b: 0 }
+					},
 
 					geo           : {
 						center     : {
@@ -68,8 +76,8 @@ const CountryMap = (props) => {
 						oceancolor : 'rgb(15, 9, 132)',
 
 						projection : {
-							type  : 'robinson',
-							scale : 5
+							type  : 'natural earth',
+							scale : 7
 						}
 					}
 				}}
