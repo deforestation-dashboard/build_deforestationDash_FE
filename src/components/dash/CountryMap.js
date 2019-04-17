@@ -1,9 +1,8 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
+import { countries } from '../../data/countryLocations';
 
-import { getYEAR } from '../../actions';
-
-const Map2000 = (props) => {
+const CountryMap = (props) => {
 	const filteredByYear = props.rawData.filter((item) => item.year === 2000);
 	const locationsArray = filteredByYear.map((item) => item.country);
 	const zArray = filteredByYear.map((item) => item.forest_propotion_to_land);
@@ -15,6 +14,16 @@ const Map2000 = (props) => {
 	// 	filteredByYear = props.rawData.filter((item) => item.year === selectedYear);
 	// 	console.log(selectedYear);
 	// };
+	console.log('countrydata', props.countryData.country);
+
+	const latitude = props.countryData.country ? countries[props.countryData.country].lat : '9.748917';
+	console.log(latitude);
+	const longitude = props.countryData.country ? countries[props.countryData.country].lon : '-83.753428';
+	console.log(longitude);
+	// if (props.countryData.country) {
+	// 	console.log(countries[props.countryData.country]);
+	// 			return countries[props.countryData.country].lat
+	// }
 
 	return (
 		<div>
@@ -37,8 +46,8 @@ const Map2000 = (props) => {
 					}
 				]}
 				layout={{
-					width         : 1300,
-					height        : 800,
+					width         : 600,
+					height        : 500,
 					clickmode     : 'event+select',
 
 					paper_bgcolor : '#ffffff',
@@ -46,6 +55,11 @@ const Map2000 = (props) => {
 					title         : `Tree Coverage - 2000`,
 
 					geo           : {
+						center     : {
+							lon : longitude,
+							lat : latitude
+						},
+
 						landcolor  : 'rgb(200, 212, 227)',
 						showlakes  : true,
 						showocean  : true,
@@ -55,7 +69,7 @@ const Map2000 = (props) => {
 
 						projection : {
 							type  : 'robinson',
-							scale : 1
+							scale : 5
 						}
 					}
 				}}
@@ -64,4 +78,4 @@ const Map2000 = (props) => {
 	);
 };
 
-export default Map2000;
+export default CountryMap;

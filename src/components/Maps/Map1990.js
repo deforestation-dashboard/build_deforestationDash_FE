@@ -4,8 +4,8 @@ import Plot from 'react-plotly.js';
 const Map1990 = (props) => {
 	// console.log('from map', data[0].locations);
 	const filteredByYear = props.rawData.filter((item) => item.year === 1990);
-	const locationsArray = filteredByYear.map((item) => item.entity);
-	const zArray = filteredByYear.map((item) => item.percent);
+	const locationsArray = filteredByYear.map((item) => item.country);
+	const zArray = filteredByYear.map((item) => item.forest_propotion_to_land);
 	return (
 		<div>
 			<Plot
