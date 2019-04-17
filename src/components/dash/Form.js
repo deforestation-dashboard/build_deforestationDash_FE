@@ -19,9 +19,6 @@ class Form extends React.Component {
 		this.setState({ year: this.state.year, country: this.state.country });
 	};
 
-	// latitude = this.props.countryData.country ? countries[props.countryData.country].lat : ['Costa Rica'];
-	// console.log(latitude);
-
 	render() {
 		return (
 			<form className="form" onSubmit={this.findCountry}>

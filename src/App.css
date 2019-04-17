@@ -39,7 +39,13 @@
 
 .country-map-container {
 	height: 100%;
+	width: 600px;
+	/* position: sticky;
+	top: 30px; */
 	position: fixed;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
 }
 
 .year-links {

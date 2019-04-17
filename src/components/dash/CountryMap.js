@@ -42,25 +42,30 @@ const CountryMap = (props) => {
 						autocolorscale : false,
 						colorscale     : [ [ 0, '#f9f7b1' ], [ 1, '#186806' ] ],
 						zmin           : 0,
-						zmax           : 100
+						zmax           : 100,
+						colorbar       : {
+							lenmode : 'pixels',
+							len     : 400
+						}
 					}
 				]}
 				layout={{
-					width         : 600,
+					width         : 1100,
 					height        : 500,
+					margin        : {
+						l : 0,
+						r : 0,
+						t : 0,
+						b : 0
+					},
 					clickmode     : 'event+select',
 
 					paper_bgcolor : '#ffffff',
 
-					margin        : {
-						pad        : 0,
-						autoexpand : true
-					},
-
-					title         : {
-						text : `Tree Coverage - 2000`,
-						pad  : { t: 0, b: 0 }
-					},
+					// title         : {
+					// 	text : `Tree Coverage - 2000`,
+					// 	pad  : { t: 0, b: 0 }
+					// },
 
 					geo           : {
 						center     : {
@@ -76,7 +81,7 @@ const CountryMap = (props) => {
 						oceancolor : 'rgb(15, 9, 132)',
 
 						projection : {
-							type  : 'natural earth',
+							type  : 'robinson',
 							scale : 7
 						}
 					}
