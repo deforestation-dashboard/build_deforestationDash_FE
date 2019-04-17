@@ -1,9 +1,10 @@
 import React from 'react';
+import { countries } from '../../data/countryLocations';
 
 class Form extends React.Component {
 	state = {
-		year    : 0,
-		country : ''
+		year    : 2015,
+		country : 'Costa Rica'
 	};
 
 	handleChanges = (e) => {
@@ -12,10 +13,14 @@ class Form extends React.Component {
 
 	findCountry = (e) => {
 		e.preventDefault();
+		e.persist(); // this doesn't do anything --- what is the correct way to get the selected options to persist?
 		console.log(this.state.year, this.state.country);
 		this.props.selectCountryAndYear(this.state.year, this.state.country);
-		this.setState({ year: 0, country: '' });
+		this.setState({ year: this.state.year, country: this.state.country });
 	};
+
+	// latitude = this.props.countryData.country ? countries[props.countryData.country].lat : ['Costa Rica'];
+	// console.log(latitude);
 
 	render() {
 		return (
@@ -27,9 +32,9 @@ class Form extends React.Component {
 					placeholder="Costa Rica"
 					onChange={this.handleChanges}
 				>
-					{this.props.rawData.map((item, index) => (
-						<option key={index} value={item.country}>
-							{item.country}
+					{Object.keys(countries).map((item, index) => (
+						<option key={index} value={item}>
+							{item}
 						</option>
 					))}
 				</select>

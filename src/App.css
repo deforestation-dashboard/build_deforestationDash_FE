@@ -34,8 +34,12 @@
 
 .dash-container {
 	display: flex;
-	flex-wrap: wrap;
 	padding: 10px;
+}
+
+.country-map-container {
+	height: 100%;
+	position: fixed;
 }
 
 .year-links {
@@ -50,6 +54,13 @@
 	text-decoration: none;
 	color: gray;
 	font-size: 24px;
+}
+
+.right-container {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px;
+	margin-left: 46%;
 }
 
 .form {
@@ -81,6 +92,29 @@ button {
 	height: 35px;
 	font-size: 15px;
 	border-radius: 10px;
+}
+
+.infoCard {
+	margin: 10px;
+	padding: 10px;
+	background: rgba(199, 231, 124, 0.432);
+	color: rgb(241, 238, 204);
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.column {
+	text-align: left;
+	padding: 5px;
+	width: 28%;
+}
+
+.basic-info {
+	text-align: center;
+	border-right: 1px solid rgb(241, 238, 204);
+	margin-right: 10px;
 }
 
 .active {
