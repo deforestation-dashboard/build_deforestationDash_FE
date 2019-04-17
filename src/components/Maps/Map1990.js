@@ -4,8 +4,8 @@ import Plot from 'react-plotly.js';
 const Map1990 = (props) => {
 	// console.log('from map', data[0].locations);
 	const filteredByYear = props.rawData.filter((item) => item.year === 1990);
-	const locationsArray = filteredByYear.map((item) => item.entity);
-	const zArray = filteredByYear.map((item) => item.percent);
+	const locationsArray = filteredByYear.map((item) => item.country);
+	const zArray = filteredByYear.map((item) => item.forest_propotion_to_land);
 	return (
 		<div>
 			<Plot
@@ -16,25 +16,29 @@ const Map1990 = (props) => {
 						locations      : locationsArray,
 						z              : zArray,
 						autocolorscale : false,
-						colorscale     : [ [ 0, '#f9f7b1' ], [ 1, '#186806' ] ]
+						colorscale     : [ [ 0, '#f9f7b1' ], [ 1, '#186806' ] ],
+						zmin           : 0,
+						zmax           : 100
 					}
 				]}
 				layout={{
-					width  : 1300,
-					height : 800,
+					width         : 1100,
+					height        : 800,
+					clickmode     : 'event+select',
 
-					title  : 'Tree Coverage - 1990',
+					paper_bgcolor : '#ffffff',
 
-					geo    : {
+					geo           : {
 						landcolor  : 'rgb(200, 212, 227)',
 						showlakes  : true,
 						showocean  : true,
 						framecolor : 'rgb(200, 212, 227)',
 						framewidth : 0.5,
-						oceancolor : 'rgb(15, 9, 132)',
+						oceancolor : 'rgb(242, 249, 239)',
 
 						projection : {
-							type : 'robinson'
+							type  : 'robinson',
+							scale : 1.5
 						}
 					}
 				}}

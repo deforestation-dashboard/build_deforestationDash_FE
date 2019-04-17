@@ -29,3 +29,63 @@ export const getData = () => {
 			});
 	};
 };
+
+export const GET_YEAR_START = 'GET_YEAR_START';
+export const GET_YEAR_SUCCESS = 'GET_YEAR_SUCCESS';
+export const GET_YEAR_FAILURE = 'GET_YEAR_FAILURE';
+
+export const getYEAR = (year) => {
+	console.log('getYEAR called', year);
+	return (dispatch) => {
+		dispatch({
+			type : GET_YEAR_START
+		});
+		axios
+			// .get('https://deforestation-dashboard.herokuapp.com/api')
+			.get(`https://deforestation-dashboard.herokuapp.com/forest/${year}/array`)
+			.then((res) => {
+				console.log('here is the YEAR', res);
+				dispatch({
+					type    : GET_YEAR_SUCCESS,
+					payload : res.data
+				});
+			})
+			.catch((err) => {
+				console.log('error YEAR', err);
+				dispatch({
+					type    : GET_YEAR_FAILURE,
+					payload : err
+				});
+			});
+	};
+};
+
+export const GET_COUNTRY_START = 'GET_COUNTRY_START';
+export const GET_COUNTRY_SUCCESS = 'GET_COUNTRY_SUCCESS';
+export const GET_COUNTRY_FAILURE = 'GET_COUNTRY_FAILURE';
+
+export const getCountry = (year, country) => {
+	console.log('getCountry called', year, country);
+	return (dispatch) => {
+		dispatch({
+			type : GET_COUNTRY_START
+		});
+		axios
+			// .get('https://deforestation-dashboard.herokuapp.com/api')
+			.get(`https://deforestation-dashboard.herokuapp.com/${country}/${year}`)
+			.then((res) => {
+				console.log('here is the YEAR', res);
+				dispatch({
+					type    : GET_COUNTRY_SUCCESS,
+					payload : res.data
+				});
+			})
+			.catch((err) => {
+				console.log('error YEAR', err);
+				dispatch({
+					type    : GET_COUNTRY_FAILURE,
+					payload : err
+				});
+			});
+	};
+};
