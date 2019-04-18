@@ -100,14 +100,14 @@ h1 {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
-	background: #fcfdff;
+	background: #120719;
 }
 
 .country-map-container {
 	height: 100%;
 	width: 600px;
-	/* position: sticky;
-	top: 30px; */
+	position: sticky;
+	top: 30px;
 	/* position: fixed; */
 	overflow: hidden;
 	display: flex;
@@ -120,8 +120,12 @@ h1 {
 	flex-direction: column;
 	justify-content: flex-start;
 	width: 100px;
+	height: 500px;
 	/* border: 2px solid gray; */
 	background: #120719;
+	position: sticky;
+	top: 30px;
+	/* position: fixed; */
 }
 
 .year {
@@ -130,7 +134,11 @@ h1 {
 	font-size: 24px;
 	border-bottom: 2px solid gray;
 	background: #120719;
-	padding: 22px 0;
+	padding: 20px 0;
+}
+
+.right-container {
+	background: #fcfdff;
 }
 
 .form {
