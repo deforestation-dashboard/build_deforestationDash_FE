@@ -25,6 +25,14 @@
 	padding: 10px;
 }
 
+.year-links {
+	display: flex;
+	margin: 10px auto;
+	width: 800px;
+	justify-content: space-evenly;
+	align-items: flex-start;
+}
+
 .map-wrapper {
 	max-width: 1100px;
 	/* border: 1px solid red; */
@@ -34,7 +42,16 @@
 
 .dash-container {
 	display: flex;
+	flex-direction: column;
 	padding: 10px;
+	background: skyblue;
+}
+
+.dash-year {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	background: skyblue;
 }
 
 .country-map-container {
@@ -42,43 +59,41 @@
 	width: 600px;
 	/* position: sticky;
 	top: 30px; */
-	position: fixed;
+	/* position: fixed; */
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
+	border: 5px solid skyblue;
 }
 
-.year-links {
+.dash-year-links {
 	display: flex;
-	margin: 10px auto;
-	width: 800px;
+	flex-direction: column;
 	justify-content: space-evenly;
-	align-items: flex-start;
+	width: 100px;
+	/* border: 2px solid gray; */
+	background: orange;
 }
 
 .year {
 	text-decoration: none;
 	color: gray;
 	font-size: 24px;
-}
-
-.right-container {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 5px;
-	margin-left: 46%;
+	border-bottom: 2px solid gray;
+	background: orange;
+	padding: 15px 0;
 }
 
 .form {
 	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
+	/* flex-wrap: wrap;
+	flex-direction: column; */
 	justify-content: space-around;
 	align-items: center;
 	margin: 10px auto;
 	padding: 10px;
-	width: 300px;
-	height: 200px;
+	width: 600px;
+	height: 60px;
 	background: rgba(192, 192, 192, 0.151);
 	box-shadow: 4px 4px 4px rgba(192, 192, 192, 0.267);
 }
@@ -126,4 +141,10 @@ button {
 .active {
 	color: white;
 	text-decoration: underline;
+}
+
+.activeYear {
+	color: white;
+	text-decoration: underline;
+	background: skyblue;
 }

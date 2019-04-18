@@ -3,7 +3,7 @@ import Plot from 'react-plotly.js';
 import { countries } from '../../data/countryLocations';
 
 const CountryMap = (props) => {
-	const filteredByYear = props.rawData.filter((item) => item.year === 2000);
+	const filteredByYear = props.rawData.filter((item) => item.year === props.year);
 	const locationsArray = filteredByYear.map((item) => item.country);
 	const zArray = filteredByYear.map((item) => item.forest_propotion_to_land);
 
@@ -14,11 +14,11 @@ const CountryMap = (props) => {
 	// 	filteredByYear = props.rawData.filter((item) => item.year === selectedYear);
 	// 	console.log(selectedYear);
 	// };
-	console.log('countrydata', props.countryData.country);
+	console.log('countrydata', props.countryData[0].country);
 
-	const latitude = props.countryData.country ? countries[props.countryData.country].lat : '9.748917';
+	const latitude = props.countryData[0].country ? countries[props.countryData[0].country].lat : '9.748917';
 	console.log(latitude);
-	const longitude = props.countryData.country ? countries[props.countryData.country].lon : '-83.753428';
+	const longitude = props.countryData[0].country ? countries[props.countryData[0].country].lon : '-83.753428';
 	console.log(longitude);
 	// if (props.countryData.country) {
 	// 	console.log(countries[props.countryData.country]);

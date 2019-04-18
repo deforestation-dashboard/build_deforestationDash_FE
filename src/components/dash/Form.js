@@ -15,8 +15,8 @@ class Form extends React.Component {
 		e.preventDefault();
 		e.persist(); // this doesn't do anything --- what is the correct way to get the selected options to persist?
 		console.log(this.state.year, this.state.country);
-		this.props.selectCountryAndYear(this.state.year, this.state.country);
-		this.setState({ year: this.state.year, country: this.state.country });
+		this.props.selectCountryAndYear(this.state.country);
+		this.setState({ country: this.state.country });
 	};
 
 	render() {
@@ -36,7 +36,7 @@ class Form extends React.Component {
 					))}
 				</select>
 
-				<select
+				{/* <select
 					type="number"
 					name="year"
 					value={this.state.year}
@@ -48,7 +48,7 @@ class Form extends React.Component {
 					<option value="2005">2005</option>
 					<option value="2010">2010</option>
 					<option value="2015">2015</option>
-				</select>
+				</select> */}
 
 				<button>Analyze Country</button>
 			</form>
