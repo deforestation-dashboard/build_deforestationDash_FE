@@ -20,14 +20,14 @@ const plotlyMapData = [
 		z              : null,
 		autocolorscale : false,
 		colorscale     : [
-			[ 0, 'rgb(135, 104, 67)' ], //brown
-			[ 0.1, 'rgb(211, 178, 139)' ], //brown
-			[ 0.2, 'rgb(139, 219, 81)' ], //lightest green
-			[ 0.3, 'rgb(105, 163, 62)' ],
-			[ 0.5, 'rgb(74, 124, 37)' ],
-			[ 0.6, 'rgb(52, 96, 19)' ],
-			[ 0.7, 'rgb(35, 71, 8)' ],
-			[ 1, 'rgb(25, 56, 1)' ] // darkest green
+			[ 0, '#401c56' ], //brown
+			[ 0.1, '#7d45a0' ], //brown
+			[ 0.2, '#82afef' ], //lightest green
+			[ 0.3, '#83efb8' ],
+			[ 0.5, '#59db9c' ],
+			[ 0.6, '#47d38b' ],
+			[ 0.7, '#32c97b' ],
+			[ 1, '#17b363' ] // darkest green
 		],
 		zmin           : 0,
 		zmax           : 100,
@@ -42,14 +42,15 @@ const plotlyMapLayout = {
 	width         : 1100,
 	height        : 510,
 	margin        : {
-		l : 0,
-		r : 0,
-		t : 0,
-		b : 0
+		l : 4,
+		r : 4,
+		t : 5,
+		b : 5
 	},
 	clickmode     : 'event+select',
 
-	paper_bgcolor : '#ffffff',
+	paper_bgcolor : '#17b363',
+	plot_bgcolor  : '#17b363',
 
 	geo           : {
 		landcolor  : 'rgb(200, 212, 227)',
@@ -70,27 +71,28 @@ const Maps = (props) => {
 	return (
 		<div className="map-wrapper">
 			<div className="year-links">
-				<NavLink className="year" to="/world/1990">
+				<NavLink className="year-W" to="/world/1990">
 					1990
 				</NavLink>
-				<NavLink className="year" to="/world/1995">
+				<NavLink className="year-W" to="/world/1995">
 					1995
 				</NavLink>
-				<NavLink className="year" to="/world/2000">
+				<NavLink className="year-W" to="/world/2000">
 					2000
 				</NavLink>
-				<NavLink className="year" to="/world/2005">
+				<NavLink className="year-W" to="/world/2005">
 					2005
 				</NavLink>
-				<NavLink className="year" to="/world/2010">
+				<NavLink className="year-W" to="/world/2010">
 					2010
 				</NavLink>
-				<NavLink className="year" to="/world/2015">
+				<NavLink className="year-W" to="/world/2015">
 					2015
 				</NavLink>
-				<NavLink className="year" to="/world/2020">
+				<NavLink className="year-W" to="/world/2020">
 					2020
 				</NavLink>
+				<div className="spacer" />
 			</div>
 			<Route
 				path="/world/1990"

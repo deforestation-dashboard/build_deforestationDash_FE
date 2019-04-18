@@ -50,7 +50,7 @@ class Form extends React.Component {
 					<option value="2015">2015</option>
 				</select> */}
 
-				<button>Analyze Country</button>
+				<button>Analyze</button>
 			</form>
 		);
 	}
