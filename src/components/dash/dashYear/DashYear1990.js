@@ -3,8 +3,11 @@ import Plot from 'react-plotly.js';
 import { NavLink } from 'react-router-dom';
 
 import InfoCard from './InfoCard';
-import Graph1 from '../Graph1';
 import CountryMap from '../CountryMap';
+
+import Graph1 from '../Graph1';
+import Graph2 from '../Graph2';
+import Graph3 from '../Graph3';
 
 const DashYear1990 = (props) => {
 	const filteredByYear = props.countryData.filter((item) => item.year === 1990);
@@ -53,24 +56,10 @@ const DashYear1990 = (props) => {
 				</NavLink>
 			</div>
 			<div className="right-container">
-				<Plot
-					data={[
-						{
-							x      : [ 1, 2, 3 ],
-							y      : [ 2, 6, 3 ],
-							type   : 'scatter',
-							mode   : 'lines+points',
-							marker : { color: 'red' }
-						},
-						{
-							type : 'bar',
-							x    : [ 1, 2, 3 ],
-							y    : [ 2, 5, 3 ]
-						}
-					]}
-					layout={{ width: 320, height: 240, title: 'A Fancy Plot' }}
-				/>
 				<InfoCard countryData={filteredByYear[0]} />
+				<Graph1 countryData={props.countryData} />
+				<Graph2 countryData={props.countryData} />
+				<Graph3 countryData={props.countryData} />
 			</div>
 		</div>
 	);

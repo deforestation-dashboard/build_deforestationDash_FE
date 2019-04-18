@@ -9,16 +9,19 @@ const InfoCard = (props) => {
 				<h3>{props.countryData.year}</h3>
 			</div>
 			<div className="column">
-				<p>Forest Area: {props.countryData.forest_area_km}km</p>
-				<p>Country Land Area: {props.countryData.country_land_area_km}km</p>
-				<p>Forest Propotion to Land: {props.countryData.forest_propotion_to_land}</p>
-				<p>Country Population: {props.countryData.country_population}</p>
+				<p>Forest Area: {props.countryData.forest_area_km} km&#178;</p>
+				<p>Country Land Area: {props.countryData.country_land_area_km} km&#178;</p>
+				<p>Forest Propotion to Land: {props.countryData.forest_propotion_to_land}%</p>
+				<p>Country Population: {props.countryData.country_population} people</p>
 			</div>
 			<div className="column">
-				<p>Wood Removal: {props.countryData.wood_removal}</p>
-				<p>Total Land Usage: {props.countryData.total_land_usage}</p>
+				<p>Wood Removal: {props.countryData.wood_removal} m&#179;</p>
+				<p>Total Land Usage: {props.countryData.total_land_usage} km&#178;</p>
 				<p>Protected Land: {props.countryData.percent_protected_land}%</p>
-				<p>Mean Yearly Exposure to Pollution: {props.countryData.mean_yearly_exposure_pollution}</p>
+				<p>
+					Mean Yearly Exposure to Pollution: {props.countryData.mean_yearly_exposure_pollution}{' '}
+					&#181;g/m&#179;
+				</p>
 			</div>
 		</div>
 	);
