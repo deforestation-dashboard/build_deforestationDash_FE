@@ -4,7 +4,7 @@ import { countries } from '../../data/countryLocations';
 class Form extends React.Component {
 	state = {
 		year    : 2015,
-		country : 'Costa Rica'
+		country : ''
 	};
 
 	handleChanges = (e) => {
@@ -23,12 +23,14 @@ class Form extends React.Component {
 		return (
 			<form className="form" onSubmit={this.findCountry}>
 				<select
+					required
 					type="text"
 					name="country"
 					value={this.state.country}
 					placeholder="Costa Rica"
 					onChange={this.handleChanges}
 				>
+					<option value="">Select a Country</option>
 					{Object.keys(countries).map((item, index) => (
 						<option key={index} value={item}>
 							{item}

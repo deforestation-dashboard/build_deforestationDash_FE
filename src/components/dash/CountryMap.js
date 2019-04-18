@@ -20,19 +20,32 @@ const CountryMap = (props) => {
 	console.log(latitude);
 	const longitude = props.countryData[0].country ? countries[props.countryData[0].country].lon : '-83.753428';
 	console.log(longitude);
-	// if (props.countryData.country) {
-	// 	console.log(countries[props.countryData.country]);
-	// 			return countries[props.countryData.country].lat
-	// }
+
+	//Country Selection--- by double clicking---
+
+	let lastClick = null;
+
+	const clicked = (e) => {
+		let firstClick = now();
+		if (firstClick - lastClick < 300) {
+			console.log(e.points[0].location, e.points[0]);
+			props.selectCountryAndYear(e.points[0].location);
+		} else {
+			lastClick = firstClick;
+		}
+	};
+
+	const now = () => {
+		return new Date().getTime();
+	};
 
 	return (
 		<div>
-			{/* <button onClick={(e) => selectYear(e, 1990)}>1990</button>
-			<button onClick={(e) => selectYear(e, 2000)}>2000</button>
-			<button onClick={(e) => selectYear(e, 2005)}>2005</button>
-			<button onClick={(e) => selectYear(e, 2010)}>2010</button>
-			<button onClick={(e) => selectYear(e, 2015)}>2015</button> */}
 			<Plot
+				onClick={(e) => {
+					console.log('onClick');
+					clicked(e);
+				}}
 				data={[
 					{
 						type           : 'choropleth',

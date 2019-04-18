@@ -29,7 +29,12 @@ const DashYear2015 = (props) => {
 		<div className="dash-year">
 			<div className="country-map-container">
 				{props.countryData && (
-					<CountryMap rawData={props.rawData} countryData={props.countryData} year={2015} />
+					<CountryMap
+						rawData={props.rawData}
+						countryData={props.countryData}
+						year={2015}
+						selectCountryAndYear={props.selectCountryAndYear}
+					/>
 				)}
 			</div>
 			<div className="dash-year-links">

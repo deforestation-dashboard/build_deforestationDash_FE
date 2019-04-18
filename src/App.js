@@ -32,11 +32,6 @@ class App extends Component {
 		return (
 			<Router>
 				<div className="App">
-					{/* <button onClick={(e) => this.selectYear(e, 1990)}>1990</button>
-					<button onClick={(e) => this.selectYear(e, 2000)}>2000</button>
-					<button onClick={(e) => this.selectYear(e, 2005)}>2005</button>
-					<button onClick={(e) => this.selectYear(e, 2010)}>2010</button>
-					<button onClick={(e) => this.selectYear(e, 2015)}>2015</button> */}
 					<h1>Deforestation Dash</h1>
 					<nav className="nav">
 						<NavLink className="link" activeClassName="activeNav" to="/world/2015">
