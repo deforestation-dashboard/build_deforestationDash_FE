@@ -1,5 +1,7 @@
 import React from 'react';
 
+//Conditionally Handle data with 0 values----
+
 const InfoCard = (props) => {
 	const forestArea =
 		props.countryData.forest_area_km === '0'

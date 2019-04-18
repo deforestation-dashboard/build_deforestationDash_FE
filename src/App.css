@@ -27,6 +27,12 @@ h1 {
 	margin: 0;
 }
 
+@media (max-width: 550px) {
+	h1 {
+		font-size: 40px;
+	}
+}
+
 .nav {
 	display: flex;
 	justify-content: space-around;
@@ -40,11 +46,31 @@ h1 {
 	background: #120719d7;
 }
 
+@media (max-width: 1000px) {
+	.nav {
+		position: static;
+		flex-direction: column;
+	}
+}
+
 .link {
 	text-decoration: none;
 	font-size: 24px;
 	color: silver;
 	padding: 10px;
+}
+
+@media (max-width: 1000px) {
+	.link {
+		border-bottom: 1px solid white;
+		padding: 20px 0;
+	}
+}
+
+@media (max-width: 550px) {
+	.full-page {
+		display: hidden;
+	}
 }
 
 .activeNav {
@@ -105,9 +131,15 @@ h1 {
 	background: #120719;
 }
 
+@media (max-width: 1000px) {
+	.dash-year {
+		flex-direction: column;
+	}
+}
+
 .country-map-container {
 	height: 498px;
-	width: 600px;
+	max-width: 600px;
 	position: sticky;
 	top: 30px;
 	/* position: fixed; */
@@ -115,6 +147,12 @@ h1 {
 	display: flex;
 	justify-content: center;
 	border: 8px solid #fcfdff;
+}
+
+@media (max-width: 1000px) {
+	.country-map-container {
+		position: static;
+	}
 }
 
 .dash-year-links {
@@ -130,6 +168,18 @@ h1 {
 	/* position: fixed; */
 }
 
+@media (max-width: 1000px) {
+	.dash-year-links {
+		position: static;
+		flex-direction: row;
+		width: 95%;
+		height: 60px;
+
+		/* position: absolute;
+		transform: translate(50px 200px); */
+	}
+}
+
 .year {
 	text-decoration: none;
 	color: gray;
@@ -139,12 +189,31 @@ h1 {
 	padding: 20px 0;
 }
 
+@media (max-width: 1000px) {
+	.year {
+		padding: 20px 2%;
+		border-bottom: none;
+		border-right: 2px solid gray;
+		font-size: 16px;
+		/* font-weight: bold; */
+	}
+
+	.year:last-child {
+		border-right: none;
+	}
+}
+
 .right-container {
 	background: #fcfdff;
 	/* display: flex;
 	flex-direction: column;
 	align-items: center;
 	max-width: 650px; */
+}
+
+.wood-removal {
+	overflow: hidden;
+	border-bottom: 10px solid #120719;
 }
 
 .form {
@@ -182,15 +251,27 @@ button {
 	margin: 30px;
 }
 
+@media (max-width: 550px) {
+	button {
+		margin: 30px 0 30px 10px;
+	}
+}
+
 .infoCard {
 	margin: 10px;
 	padding: 10px;
 	background: #120719;
 	color: #17b363;
-	width: 600px;
+	max-width: 600px;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+}
+
+@media (max-width: 550px) {
+	.infoCard {
+		flex-direction: column;
+	}
 }
 
 .column {
@@ -201,8 +282,17 @@ button {
 
 .basic-info {
 	text-align: center;
-	border-right: 1px solid rgb(241, 238, 204);
+	border-right: 1px solid #17b363;
 	margin-right: 10px;
+}
+
+@media (max-width: 550px) {
+	.column {
+		border-right: none;
+		border-bottom: 1px solid #17b363;
+		width: 80%;
+		text-align: center;
+	}
 }
 
 .activeYear {
