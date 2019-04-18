@@ -64,24 +64,24 @@ export const GET_COUNTRY_START = 'GET_COUNTRY_START';
 export const GET_COUNTRY_SUCCESS = 'GET_COUNTRY_SUCCESS';
 export const GET_COUNTRY_FAILURE = 'GET_COUNTRY_FAILURE';
 
-export const getCountry = (year, country) => {
-	console.log('getCountry called', year, country);
+export const getCountry = (country) => {
+	console.log('getCountry called', country);
 	return (dispatch) => {
 		dispatch({
 			type : GET_COUNTRY_START
 		});
 		axios
 			// .get('https://deforestation-dashboard.herokuapp.com/api')
-			.get(`https://deforestation-dashboard.herokuapp.com/${country}/${year}`)
+			.get(`https://deforestation-dashboard.herokuapp.com/${country}`)
 			.then((res) => {
-				console.log('here is the YEAR', res);
+				console.log('getCountry - Country', res);
 				dispatch({
 					type    : GET_COUNTRY_SUCCESS,
 					payload : res.data
 				});
 			})
 			.catch((err) => {
-				console.log('error YEAR', err);
+				console.log('error getCountry', err);
 				dispatch({
 					type    : GET_COUNTRY_FAILURE,
 					payload : err

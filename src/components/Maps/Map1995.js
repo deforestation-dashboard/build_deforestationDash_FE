@@ -1,12 +1,11 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-const Map2005 = (props) => {
+const Map1995 = (props) => {
 	// console.log('from map', data[0].locations);
-	const filteredByYear = props.rawData.filter((item) => item.year === 2005);
+	const filteredByYear = props.rawData.filter((item) => item.year === 1995);
 	const locationsArray = filteredByYear.map((item) => item.country);
 	const zArray = filteredByYear.map((item) => item.forest_propotion_to_land);
-
 	props.plotlyMapData[0].locations = locationsArray;
 	props.plotlyMapData[0].z = zArray;
 
@@ -28,4 +27,4 @@ const Map2005 = (props) => {
 	);
 };
 
-export default Map2005;
+export default Map1995;

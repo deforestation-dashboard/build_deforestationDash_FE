@@ -3,7 +3,7 @@ import Plot from 'react-plotly.js';
 import { countries } from '../../data/countryLocations';
 
 const CountryMap = (props) => {
-	const filteredByYear = props.rawData.filter((item) => item.year === 2000);
+	const filteredByYear = props.rawData.filter((item) => item.year === props.year);
 	const locationsArray = filteredByYear.map((item) => item.country);
 	const zArray = filteredByYear.map((item) => item.forest_propotion_to_land);
 
@@ -14,11 +14,11 @@ const CountryMap = (props) => {
 	// 	filteredByYear = props.rawData.filter((item) => item.year === selectedYear);
 	// 	console.log(selectedYear);
 	// };
-	console.log('countrydata', props.countryData.country);
+	console.log('countrydata', props.countryData[0].country);
 
-	const latitude = props.countryData.country ? countries[props.countryData.country].lat : '9.748917';
+	const latitude = props.countryData[0].country ? countries[props.countryData[0].country].lat : '9.748917';
 	console.log(latitude);
-	const longitude = props.countryData.country ? countries[props.countryData.country].lon : '-83.753428';
+	const longitude = props.countryData[0].country ? countries[props.countryData[0].country].lon : '-83.753428';
 	console.log(longitude);
 	// if (props.countryData.country) {
 	// 	console.log(countries[props.countryData.country]);
@@ -42,25 +42,30 @@ const CountryMap = (props) => {
 						autocolorscale : false,
 						colorscale     : [ [ 0, '#f9f7b1' ], [ 1, '#186806' ] ],
 						zmin           : 0,
-						zmax           : 100
+						zmax           : 100,
+						colorbar       : {
+							lenmode : 'pixels',
+							len     : 400
+						}
 					}
 				]}
 				layout={{
-					width         : 600,
+					width         : 1100,
 					height        : 500,
+					margin        : {
+						l : 0,
+						r : 0,
+						t : 0,
+						b : 0
+					},
 					clickmode     : 'event+select',
 
 					paper_bgcolor : '#ffffff',
 
-					margin        : {
-						pad        : 0,
-						autoexpand : true
-					},
-
-					title         : {
-						text : `Tree Coverage - 2000`,
-						pad  : { t: 0, b: 0 }
-					},
+					// title         : {
+					// 	text : `Tree Coverage - 2000`,
+					// 	pad  : { t: 0, b: 0 }
+					// },
 
 					geo           : {
 						center     : {
@@ -76,7 +81,7 @@ const CountryMap = (props) => {
 						oceancolor : 'rgb(15, 9, 132)',
 
 						projection : {
-							type  : 'natural earth',
+							type  : 'robinson',
 							scale : 7
 						}
 					}

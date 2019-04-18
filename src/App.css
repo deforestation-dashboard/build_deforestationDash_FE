@@ -1,8 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Work+Sans');
+
+/*
+// Color assignments
+@font-color: @white;
+@header-color: @green;
+@background-color: @dark-purple;
+@button-color: @dark-purple;
+@dark-purple: #120719;
+@white: #FCFDFF;
+@green: #17B363;
+*/
+
 .App {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	background: rgb(35, 54, 65);
+	background: #fcfdff;
+}
+
+h1 {
+	color: #17b363;
+	font-size: 60px;
+	background: #120719e3;
+	top: 0;
+	padding: 50px;
+	margin: 0;
 }
 
 .nav {
@@ -11,11 +33,11 @@
 	position: sticky;
 	top: 0;
 	z-index: 2;
-	background: rgba(0, 0, 0, 0.459);
+	background: #12071980;
 }
 
 .nav:hover {
-	background: rgba(0, 0, 0, 0.726);
+	background: #120719d7;
 }
 
 .link {
@@ -25,81 +47,133 @@
 	padding: 10px;
 }
 
-.map-wrapper {
-	max-width: 1100px;
-	/* border: 1px solid red; */
-	overflow: hidden;
-	margin: 10px auto;
-}
-
-.dash-container {
-	display: flex;
-	padding: 10px;
-}
-
-.country-map-container {
-	height: 100%;
-	position: fixed;
+.activeNav {
+	color: #fcfdff;
 }
 
 .year-links {
 	display: flex;
-	margin: 10px auto;
-	width: 800px;
-	justify-content: space-evenly;
+	margin: 0 auto;
+	width: 1100px;
+	justify-content: flex-start;
 	align-items: flex-start;
+	background: #120719;
+}
+
+.spacer {
+	background: #fcfdff;
+	width: 215px;
+	height: 59px;
+}
+
+.year-W {
+	text-decoration: none;
+	text-align: center;
+	color: gray;
+	font-size: 24px;
+	border-right: 1px solid gray;
+	background: #120719;
+	padding: 15px 35px;
+}
+
+.active {
+	color: #fcfdff;
+	background: #17b363;
+}
+
+.map-wrapper {
+	width: 1100px;
+	/* border: 1px solid red; */
+	overflow: hidden;
+	margin: 10px auto;
+	background: #120719;
+}
+
+.dash-container {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	background: #120719;
+}
+
+.dash-year {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	background: #fcfdff;
+}
+
+.country-map-container {
+	height: 100%;
+	width: 600px;
+	/* position: sticky;
+	top: 30px; */
+	/* position: fixed; */
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	border: 5px solid #fcfdff;
+}
+
+.dash-year-links {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100px;
+	/* border: 2px solid gray; */
+	background: #120719;
 }
 
 .year {
 	text-decoration: none;
 	color: gray;
 	font-size: 24px;
-}
-
-.right-container {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 5px;
-	margin-left: 46%;
+	border-bottom: 2px solid gray;
+	background: #120719;
+	padding: 22px 0;
 }
 
 .form {
 	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: space-around;
+	/* flex-wrap: wrap;
+	flex-direction: column; */
+	justify-content: flex-end;
 	align-items: center;
-	margin: 10px auto;
+	margin: 10px;
 	padding: 10px;
-	width: 300px;
-	height: 200px;
-	background: rgba(192, 192, 192, 0.151);
-	box-shadow: 4px 4px 4px rgba(192, 192, 192, 0.267);
+	width: 90%;
+	height: 60px;
+	/* background: rgba(192, 192, 192, 0.151);
+	box-shadow: 4px 4px 4px rgba(192, 192, 192, 0.267); */
 }
 
 select {
 	height: 35px;
 	width: 280px;
 	font-size: 25px;
-	color: silver;
+	color: #17b363;
 	background: none;
 	border-top: none;
 	border-left: none;
 }
 
 button {
-	width: 50%;
+	width: 100px;
 	height: 35px;
 	font-size: 15px;
+	border: 2px solid #17b363;
 	border-radius: 10px;
+	color: #17b363;
+	background: #fcfdff;
+	margin: 30px;
 }
 
 .infoCard {
 	margin: 10px;
 	padding: 10px;
-	background: rgba(199, 231, 124, 0.432);
-	color: rgb(241, 238, 204);
-	width: 100%;
+	background: #120719;
+	color: #17b363;
+	width: 600px;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -117,7 +191,7 @@ button {
 	margin-right: 10px;
 }
 
-.active {
-	color: white;
-	text-decoration: underline;
+.activeYear {
+	color: #17b363;
+	background: #fcfdff;
 }

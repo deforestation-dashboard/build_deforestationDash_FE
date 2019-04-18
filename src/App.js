@@ -19,9 +19,9 @@ class App extends Component {
 	// 	this.props.getYEAR(year);
 	// };
 
-	selectCountryAndYear = (year, country) => {
-		this.props.getCountry(year, country);
-		console.log('from app', year, country);
+	selectCountryAndYear = (country) => {
+		this.props.getCountry(country);
+		console.log('from app', country);
 	};
 
 	render() {
@@ -39,17 +39,17 @@ class App extends Component {
 					<button onClick={(e) => this.selectYear(e, 2015)}>2015</button> */}
 					<h1>Deforestation Dash</h1>
 					<nav className="nav">
-						<NavLink className="link" to="/world/2015">
+						<NavLink className="link" activeClassName="activeNav" to="/world/2015">
 							Full Page Map
 						</NavLink>
-						<NavLink className="link" to="/dash">
+						<NavLink className="link" activeClassName="activeNav" to="/dash/country/2015">
 							Dashboard
 						</NavLink>
 					</nav>
 
 					<Route path="/world" render={() => <Maps rawData={this.props.data} />} />
 					<Route
-						path="/dash"
+						path="/dash/country"
 						render={() => (
 							<Dash
 								rawData={this.props.data}
