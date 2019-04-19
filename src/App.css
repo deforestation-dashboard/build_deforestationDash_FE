@@ -91,7 +91,7 @@ h1 {
 
 .prompt {
 	position: absolute;
-	margin: 400px 30%;
+	margin: 200px 25%;
 	font-size: 60px;
 	color: #17b363;
 	font-weight: bolder;
@@ -103,6 +103,12 @@ h1 {
 	.prompt {
 		margin: 600px 10%;
 	}
+}
+
+.prompt-link {
+	text-decoration: none;
+	color: #7a2eaa;
+	font-style: italic;
 }
 
 .year-links {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Link } from 'react-router-dom';
 
 import './App.css';
 import logo from './Logo-130.png';
@@ -52,7 +52,14 @@ class App extends Component {
 						</a>
 					</nav>
 
-					<h2 className="prompt">Select a country to get started!</h2>
+					<h2 className="prompt">
+						Click{'  '}
+						<Link className="prompt-link" to="/dash/country">
+							here
+						</Link>
+						{'  '}
+						to get started!
+					</h2>
 
 					<Route path="/world" render={() => <Maps rawData={this.props.data} />} />
 					<Route
