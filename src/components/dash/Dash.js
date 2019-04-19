@@ -14,11 +14,12 @@ import DashYear2005 from './dashYear/DashYear2005';
 import DashYear2010 from './dashYear/DashYear2010';
 import DashYear2015 from './dashYear/DashYear2015';
 import DashYear2020 from './dashYear/DashYear2020';
+import DashYear2025 from './dashYear/DashYear2025';
 
 class Dash extends React.Component {
 	render() {
 		if (this.props.countryLoading) {
-			return <h2>Loading</h2>;
+			return <h2>Loading...</h2>;
 		}
 
 		return (
@@ -81,7 +82,8 @@ class Dash extends React.Component {
 					)}
 				/>
 				<Route
-					path="/dash/country/2015"
+					exact
+					path="/dash/country"
 					render={() => (
 						<DashYear2015
 							rawData={this.props.rawData}
@@ -94,6 +96,16 @@ class Dash extends React.Component {
 					path="/dash/country/2020"
 					render={() => (
 						<DashYear2020
+							rawData={this.props.rawData}
+							countryData={this.props.countryData}
+							selectCountryAndYear={this.props.selectCountryAndYear}
+						/>
+					)}
+				/>
+				<Route
+					path="/dash/country/2025"
+					render={() => (
+						<DashYear2025
 							rawData={this.props.rawData}
 							countryData={this.props.countryData}
 							selectCountryAndYear={this.props.selectCountryAndYear}

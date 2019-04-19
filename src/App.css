@@ -18,12 +18,24 @@
 	background: #fcfdff;
 }
 
+.header {
+	display: flex;
+	background: #120719e3;
+	align-items: flex-end;
+}
+
+@media (max-width: 500px) {
+	.logo {
+		width: 100px;
+	}
+}
+
 h1 {
 	color: #17b363;
 	font-size: 60px;
-	background: #120719e3;
+	/* background: #120719e3; */
 	top: 0;
-	padding: 50px;
+	/* padding: 50px; */
 	margin: 0;
 }
 
@@ -75,6 +87,22 @@ h1 {
 
 .activeNav {
 	color: #fcfdff;
+}
+
+.prompt {
+	position: absolute;
+	margin: 400px 30%;
+	font-size: 60px;
+	color: #17b363;
+	font-weight: bolder;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+@media (max-width: 1000px) {
+	.prompt {
+		margin: 600px 10%;
+	}
 }
 
 .year-links {
@@ -186,7 +214,7 @@ h1 {
 	font-size: 24px;
 	border-bottom: 2px solid gray;
 	background: #120719;
-	padding: 20px 0;
+	padding: 16px 0;
 }
 
 @media (max-width: 1000px) {
@@ -200,6 +228,12 @@ h1 {
 
 	.year:last-child {
 		border-right: none;
+	}
+}
+
+@media (max-width: 499px) {
+	.year {
+		font-size: 12px;
 	}
 }
 

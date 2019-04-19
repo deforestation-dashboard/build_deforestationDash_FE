@@ -10,12 +10,12 @@ import Graph1 from '../Graph1';
 import Graph2 from '../Graph2';
 import Graph3 from '../Graph3';
 
-const DashYear2015 = (props) => {
-	const filteredByYear = props.countryData.filter((item) => item.year === 2015);
+const DashYear2025 = (props) => {
+	const filteredByYear = props.countryData.filter((item) => item.year === 2025);
 	const locationsArray = filteredByYear.map((item) => item.country);
 	const zArray = filteredByYear.map((item) => item.forest_propotion_to_land);
 
-	console.log('fromDashYear2015', filteredByYear);
+	console.log('fromDashYear2025', filteredByYear);
 
 	if (!filteredByYear[0]) {
 		console.log('filteredByYear load');
@@ -33,7 +33,7 @@ const DashYear2015 = (props) => {
 					<CountryMap
 						rawData={props.rawData}
 						countryData={props.countryData}
-						year={2015}
+						year={2025}
 						selectCountryAndYear={props.selectCountryAndYear}
 					/>
 				)}
@@ -49,4 +49,4 @@ const DashYear2015 = (props) => {
 	);
 };
 
-export default DashYear2015;
+export default DashYear2025;

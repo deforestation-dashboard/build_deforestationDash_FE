@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import InfoCard from './InfoCard';
 import CountryMap from '../CountryMap';
+import DashYearLinks from './DashYearLinks';
 
 import Graph1 from '../Graph1';
 import Graph2 from '../Graph2';
@@ -37,29 +38,7 @@ const DashYear2000 = (props) => {
 					/>
 				)}
 			</div>
-			<div className="dash-year-links">
-				<NavLink className="year" activeClassName="activeYear" to="/dash/country/1990">
-					1990
-				</NavLink>
-				<NavLink className="year" activeClassName="activeYear" to="/dash/country/1995">
-					1995
-				</NavLink>
-				<NavLink className="year" activeClassName="activeYear" to="/dash/country/2000">
-					2000
-				</NavLink>
-				<NavLink className="year" activeClassName="activeYear" to="/dash/country/2005">
-					2005
-				</NavLink>
-				<NavLink className="year" activeClassName="activeYear" to="/dash/country/2010">
-					2010
-				</NavLink>
-				<NavLink className="year" activeClassName="activeYear" to="/dash/country/2015">
-					2015
-				</NavLink>
-				<NavLink className="year" activeClassName="activeYear" to="/dash/country/2020">
-					2020
-				</NavLink>
-			</div>
+			<DashYearLinks />
 			<div className="right-container">
 				<InfoCard countryData={filteredByYear[0]} />
 				<Graph1 countryData={props.countryData} />
