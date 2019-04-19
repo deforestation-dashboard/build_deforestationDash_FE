@@ -9,6 +9,7 @@ import Map2005 from './Map2005';
 import Map2010 from './Map2010';
 import Map2015 from './Map2015';
 import Map2020 from './Map2020';
+import Map2025 from './Map2025';
 
 // plotlyMapData and plotlyMapLayout adjusts all Full Page Maps at once.
 // location and z propteries set to null here so they can be set by each map's filtering functions
@@ -20,14 +21,18 @@ const plotlyMapData = [
 		z              : null,
 		autocolorscale : false,
 		colorscale     : [
-			[ 0, '#401c56' ], //brown
-			[ 0.1, '#7d45a0' ], //brown
-			[ 0.2, '#82afef' ], //lightest green
-			[ 0.3, '#83efb8' ],
-			[ 0.5, '#59db9c' ],
-			[ 0.6, '#47d38b' ],
-			[ 0.7, '#32c97b' ],
-			[ 1, '#17b363' ] // darkest green
+			[ 0, 'rgb(214,249,207)' ],
+			[ 0.09090909090909091, 'rgb(186,228,174)' ],
+			[ 0.18181818181818182, 'rgb(156,209,143)' ],
+			[ 0.2727272727272727, 'rgb(124,191,115)' ],
+			[ 0.36363636363636365, 'rgb(85,174,91)' ],
+			[ 0.45454545454545453, 'rgb(37,157,81)' ],
+			[ 0.5454545454545454, 'rgb(7,138,78)' ],
+			[ 0.6363636363636364, 'rgb(13,117,71)' ],
+			[ 0.7272727272727273, 'rgb(23,95,61)' ],
+			[ 0.8181818181818182, 'rgb(25,75,49)' ],
+			[ 0.9090909090909091, 'rgb(23,55,35)' ],
+			[ 1, 'rgb(17,36,20)' ]
 		],
 		zmin           : 0,
 		zmax           : 100,
@@ -86,11 +91,14 @@ const Maps = (props) => {
 				<NavLink className="year-W" to="/world/2010">
 					2010
 				</NavLink>
-				<NavLink className="year-W" to="/world/2015">
+				<NavLink className="year-W" exact to="/world">
 					2015
 				</NavLink>
 				<NavLink className="year-W" to="/world/2020">
 					2020
+				</NavLink>
+				<NavLink className="year-W" to="/world/2025">
+					2025
 				</NavLink>
 				<div className="spacer" />
 			</div>
@@ -125,7 +133,8 @@ const Maps = (props) => {
 				)}
 			/>
 			<Route
-				path="/world/2015"
+				exact
+				path="/world"
 				render={() => (
 					<Map2015 rawData={props.rawData} plotlyMapData={plotlyMapData} plotlyMapLayout={plotlyMapLayout} />
 				)}
@@ -134,6 +143,12 @@ const Maps = (props) => {
 				path="/world/2020"
 				render={() => (
 					<Map2020 rawData={props.rawData} plotlyMapData={plotlyMapData} plotlyMapLayout={plotlyMapLayout} />
+				)}
+			/>
+			<Route
+				path="/world/2025"
+				render={() => (
+					<Map2025 rawData={props.rawData} plotlyMapData={plotlyMapData} plotlyMapLayout={plotlyMapLayout} />
 				)}
 			/>
 		</div>

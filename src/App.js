@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import './App.css';
+import logo from './Logo-130.png';
 
 import Maps from './components/Maps/Maps';
 import Dash from './components/dash/Dash';
@@ -32,20 +33,26 @@ class App extends Component {
 		return (
 			<Router>
 				<div className="App">
-					{/* <button onClick={(e) => this.selectYear(e, 1990)}>1990</button>
-					<button onClick={(e) => this.selectYear(e, 2000)}>2000</button>
-					<button onClick={(e) => this.selectYear(e, 2005)}>2005</button>
-					<button onClick={(e) => this.selectYear(e, 2010)}>2010</button>
-					<button onClick={(e) => this.selectYear(e, 2015)}>2015</button> */}
-					<h1>Deforestation Dash</h1>
+					<div className="header">
+						<img className="logo" src={logo} alt="logo" />
+						<h1>Deforestation Dash</h1>
+					</div>
 					<nav className="nav">
-						<NavLink className="link" activeClassName="activeNav" to="/world/2015">
-							Full Page Map
-						</NavLink>
-						<NavLink className="link" activeClassName="activeNav" to="/dash/country/2015">
+						<a className="link" href="https://musing-hopper-b8bad0.netlify.com/index.html">
+							Home
+						</a>
+						<NavLink className="link" activeClassName="activeNav" to="/dash/country">
 							Dashboard
 						</NavLink>
+						<NavLink className="link" activeClassName="activeNav" to="/world">
+							Full Page Map
+						</NavLink>
+						<a className="link" href="https://cranky-almeida-72a275.netlify.com/">
+							How you can help
+						</a>
 					</nav>
+
+					<h2 className="prompt">Select a country to get started!</h2>
 
 					<Route path="/world" render={() => <Maps rawData={this.props.data} />} />
 					<Route

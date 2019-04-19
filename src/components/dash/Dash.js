@@ -14,11 +14,12 @@ import DashYear2005 from './dashYear/DashYear2005';
 import DashYear2010 from './dashYear/DashYear2010';
 import DashYear2015 from './dashYear/DashYear2015';
 import DashYear2020 from './dashYear/DashYear2020';
+import DashYear2025 from './dashYear/DashYear2025';
 
 class Dash extends React.Component {
 	render() {
 		if (this.props.countryLoading) {
-			return <h2>Loading</h2>;
+			return <h2>Loading...</h2>;
 		}
 
 		return (
@@ -32,36 +33,85 @@ class Dash extends React.Component {
 
 				<Route
 					path="/dash/country/1990"
-					render={() => <DashYear1990 rawData={this.props.rawData} countryData={this.props.countryData} />}
+					render={() => (
+						<DashYear1990
+							rawData={this.props.rawData}
+							countryData={this.props.countryData}
+							selectCountryAndYear={this.props.selectCountryAndYear}
+						/>
+					)}
 				/>
 				<Route
 					path="/dash/country/1995"
-					render={() => <DashYear1995 rawData={this.props.rawData} countryData={this.props.countryData} />}
+					render={() => (
+						<DashYear1995
+							rawData={this.props.rawData}
+							countryData={this.props.countryData}
+							selectCountryAndYear={this.props.selectCountryAndYear}
+						/>
+					)}
 				/>
 				<Route
 					path="/dash/country/2000"
-					render={() => <DashYear2000 rawData={this.props.rawData} countryData={this.props.countryData} />}
+					render={() => (
+						<DashYear2000
+							rawData={this.props.rawData}
+							countryData={this.props.countryData}
+							selectCountryAndYear={this.props.selectCountryAndYear}
+						/>
+					)}
 				/>
 				<Route
 					path="/dash/country/2005"
-					render={() => <DashYear2005 rawData={this.props.rawData} countryData={this.props.countryData} />}
+					render={() => (
+						<DashYear2005
+							rawData={this.props.rawData}
+							countryData={this.props.countryData}
+							selectCountryAndYear={this.props.selectCountryAndYear}
+						/>
+					)}
 				/>
 				<Route
 					path="/dash/country/2010"
-					render={() => <DashYear2010 rawData={this.props.rawData} countryData={this.props.countryData} />}
+					render={() => (
+						<DashYear2010
+							rawData={this.props.rawData}
+							countryData={this.props.countryData}
+							selectCountryAndYear={this.props.selectCountryAndYear}
+						/>
+					)}
 				/>
 				<Route
-					path="/dash/country/2015"
-					render={() => <DashYear2015 rawData={this.props.rawData} countryData={this.props.countryData} />}
+					exact
+					path="/dash/country"
+					render={() => (
+						<DashYear2015
+							rawData={this.props.rawData}
+							countryData={this.props.countryData}
+							selectCountryAndYear={this.props.selectCountryAndYear}
+						/>
+					)}
 				/>
 				<Route
 					path="/dash/country/2020"
-					render={() => <DashYear2020 rawData={this.props.rawData} countryData={this.props.countryData} />}
+					render={() => (
+						<DashYear2020
+							rawData={this.props.rawData}
+							countryData={this.props.countryData}
+							selectCountryAndYear={this.props.selectCountryAndYear}
+						/>
+					)}
 				/>
-
-				{/* <Graph1 countryData={this.props.countryData} />
-				<Graph2 countryData={this.props.countryData} />
-				<Graph3 countryData={this.props.countryData} /> */}
+				<Route
+					path="/dash/country/2025"
+					render={() => (
+						<DashYear2025
+							rawData={this.props.rawData}
+							countryData={this.props.countryData}
+							selectCountryAndYear={this.props.selectCountryAndYear}
+						/>
+					)}
+				/>
 			</div>
 		);
 	}
